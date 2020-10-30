@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<opencv_storage>
+  <camera_id>0</camera_id>
+  <marker_detection>1</marker_detection>
+  <motion_detection>1</motion_detection>
+</opencv_storage>
