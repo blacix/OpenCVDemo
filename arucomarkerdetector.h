@@ -15,6 +15,8 @@ public:
     inline void enableMarkerDisplay(bool enabled) {mMarkerDislayEnabled = enabled;}
     inline void setCallback(ArucoMarkerListCallback callback) {mCallback = callback;}
 
+    void generateMarkerImages() const;
+
 private:
     void detectMarkers(cv::Mat& image);
 
