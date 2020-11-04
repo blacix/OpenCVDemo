@@ -46,8 +46,9 @@ void MotionDetector::detectMotion(cv::Mat& frame)
     cv::absdiff(mFirstFrameGray, mActualFrameGray, frameDelta);
     cv::threshold(frameDelta, thresh, 25, 255, cv::THRESH_BINARY);
 
-    cv::dilate(thresh, thresh, cv::Mat(), cv::Point(-1,-1), 2);
-    cv::findContours(thresh, cnts, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_TC89_L1);
+    cv::Mat thrhes_image;
+    cv::dilate(thresh, thrhes_image, cv::Mat(), cv::Point(-1,-1), 2);
+    cv::findContours(thrhes_image, cnts, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_TC89_L1);
 
 
     for(size_t i = 0; i < cnts.size(); i++)
